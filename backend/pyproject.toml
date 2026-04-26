@@ -1,0 +1,47 @@
+[project]
+name = "app"
+version = "2.0.0"
+description = "Riff App"
+authors = [{ name = "Databutton", email = "hi@databutton.com" }]
+
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "databutton>=0.40.0",
+    "fastapi>=0.116.1",
+    "google-cloud-firestore>=2.23.0",
+    "requests>=2.32.5",
+    "uvicorn>=0.34.2",
+]
+
+[dependency-groups]
+base = [
+  "databutton==0.40.0",
+  "uvicorn[standard]>=0.34.0",
+  "fastapi>=0.115.7",
+  "pydantic>=2.5.0",
+  "httpx>=0.28.1",
+  "python-multipart>=0.0.9",
+  "pyjwt>=2.10.1",
+  "cryptography>=44.0.0",
+  "asyncpg>=0.30.0",
+  "dotenv>=0.9.9",
+]
+dev = ["asyncpg-stubs>=0.30.2", "pytest>=8.4.2"]
+app = ["numpy < 2", "langchain-core == 1.2.7", "langchain-text-splitters == 1.1.0", "huggingface-hub < 1.0", "pillow == 11.0.0", "openai == 2.15.0", "beautifulsoup4 == 4.14.3", "requests == 2.32.5", "boto3 == 1.42.31", "pandas == 2.3.3", "python-dotenv == 1.2.1", "pypdf == 6.6.0", "pdfminer.six == 20260107", "python-docx == 1.2.0", "python-pptx == 1.0.2", "unstructured == 0.18.27", "docx2txt == 0.9", "PyMuPDF == 1.26.7", "striprtf == 0.0.29", "pytesseract == 0.3.13", "pikepdf == 10.2.0", "google-cloud-speech == 2.36.0", "google-cloud-texttospeech == 2.34.0", "google-cloud-firestore == 2.23.0", "google-cloud-vision == 3.12.0", "google-cloud-documentai == 3.8.0", "google-cloud-tasks == 2.21.0", "google-cloud-storage == 3.8.0", "google-genai == 1.59.0", "firebase-admin == 7.1.0", "pinecone-client == 3.0.0", "tavily-python == 0.7.19", "langchain == 1.2.6", "langchain-community == 0.4.1", "langchain-google-vertexai == 3.2.1", "tiktoken == 0.6.0", "accelerate == 1.12.0", "transformers == 4.41.2", "timm == 1.0.24", "ipykernel == 6.29.5", "python-nanoid == 2.0.0", "python-slugify == 8.0.4", "reportlab == 4.4.9", "email-validator == 2.3.0", "soundfile == 0.13.1"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.ruff]
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__",
+    "venv",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "B"]
+ignore = ["E501", "F401", "E722", "E701", "B904", "B008", "B905", "B026"]
